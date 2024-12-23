@@ -83,7 +83,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 載入模型
 model = UNet(in_channels=3, out_channels=3).to(device)
-model.load_state_dict(torch.load("outputModel/outputModel.pth", map_location=device))
+model.load_state_dict(torch.load("outputModel/testModel.pth", map_location=device))
 model.eval()
 
 # 指定資料夾路徑
