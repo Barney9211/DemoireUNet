@@ -52,7 +52,7 @@ class DoubleConv(nn.Module):
     def forward(self, x):
         return self.net(x)
 
-
+#定義UNet架構
 class UNet(nn.Module):
     def __init__(self, in_channels=3, out_channels=3, feature_channels=[64, 128, 256, 512]):
         super(UNet, self).__init__()
@@ -123,10 +123,10 @@ if __name__ == "__main__":
     ])
 
     # 建立資料集與 DataLoader
-    moire_dir = "../MoirePattenData/Moire"
-    clean_dir = "../MoirePattenData/Good"
+    moire_dir = "./MoirePattenData/Moire"
+    clean_dir = "./MoirePattenData/Good"
     train_dataset = MoireDataset(moire_dir=moire_dir, clean_dir=clean_dir, transform=transform)
-    train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, num_workers=2)
+    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=2)
 
     # 建立模型與損失函數、優化器
     model = UNet(in_channels=3, out_channels=3).to(device)

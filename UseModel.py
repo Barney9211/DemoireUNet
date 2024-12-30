@@ -131,7 +131,7 @@ for filename in os.listdir(input_folder):
 
         # 儲存處理後的影像
         output_path = os.path.join(output_folder, filename)
-        cv2.imwrite(output_path, denoised_image)
+        # cv2.imwrite(output_path, denoised_image)
         image_bgr=cv2.resize(image_bgr,(600,600))
         cv2.imshow("origin",image_bgr)
         cv2.imshow("demoire",denoised_image)
